@@ -5,11 +5,16 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class Apresentacao {
 
 	private JFrame frame;
 	private JTextField tfFrase;
+	private JTextArea taSaida;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -53,12 +58,27 @@ public class Apresentacao {
 		tfFrase.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Processar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frase f = new Frase(tfFrase.getText());
+				String[] resultado = f.separarPalavras();
+				String[] resultadoNaMao = f.separarPalavrasNaMao();
+				taSaida.setText(f.getFrase()+"\n\nPalavras:");
+				for (int i=0; i < resultado.length; i++) {
+					taSaida.append("\n"+resultado[i]+ " = "+resultado[i].length());
+					taSaida.append("\n"+resultadoNaMao[i]+ " = "+resultadoNaMao[i].length());
+				}
+			}
+		});
 		btnNewButton.setBounds(115, 58, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JTextArea taSaida = new JTextArea();
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(115, 106, 266, 144);
+		frame.getContentPane().add(scrollPane);
+		
+		taSaida = new JTextArea();
+		scrollPane.setViewportView(taSaida);
 		taSaida.setEditable(false);
-		taSaida.setBounds(115, 106, 266, 144);
-		frame.getContentPane().add(taSaida);
 	}
 }
