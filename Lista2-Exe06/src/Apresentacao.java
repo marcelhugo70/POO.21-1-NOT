@@ -2,8 +2,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Apresentacao {
 
@@ -11,6 +14,7 @@ public class Apresentacao {
 	private JTextField tfTamanho;
 	private JTextField tfValor;
 	private JTextField tfPosicao;
+	private VetorDeReais umObjetoVetor, segundoObjetoVetor;
 
 	/**
 	 * Launch the application.
@@ -54,6 +58,12 @@ public class Apresentacao {
 		tfTamanho.setColumns(10);
 		
 		JButton btnCriar = new JButton("Criar");
+		btnCriar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int tam = Integer.parseInt(tfTamanho.getText());
+				umObjetoVetor = new VetorDeReais(tam);
+			}
+		});
 		btnCriar.setBounds(201, 7, 89, 23);
 		frame.getContentPane().add(btnCriar);
 		
@@ -76,7 +86,57 @@ public class Apresentacao {
 		tfPosicao.setColumns(10);
 		
 		JButton tfOK = new JButton("OK");
+		tfOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				umObjetoVetor.setValor(Double.parseDouble(tfValor.getText()),
+										Integer.parseInt(tfPosicao.getText()));		
+			}
+		});
 		tfOK.setBounds(314, 56, 89, 23);
 		frame.getContentPane().add(tfOK);
+		
+		JButton btnPares = new JButton("Quantos pares?");
+		btnPares.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int qtde = umObjetoVetor.getQuantidadePares();
+				JOptionPane.showMessageDialog(frame,"Quantidade de pares:"+qtde);
+			}
+		});
+		btnPares.setBounds(10, 227, 127, 23);
+		frame.getContentPane().add(btnPares);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				segundoObjetoVetor = umObjetoVetor;
+			}
+		});
+		btnGuardar.setBounds(314, 7, 89, 23);
+		frame.getContentPane().add(btnGuardar);
+		
+		JButton btnDividir = new JButton("Dividir");
+		btnDividir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VetorDeReais resultante = umObjetoVetor.dividir(segundoObjetoVetor);
+				String str = "REsultado da divisão:";
+				for (int i=0; i < resultante.getTamanho(); i++) {
+					str += "\n["+i+"] = "+resultante.getValor(i);
+				}
+				JOptionPane.showMessageDialog(frame, str);
+			}
+		});
+		btnDividir.setBounds(150, 227, 89, 23);
+		frame.getContentPane().add(btnDividir);
+		
+		JButton btnMultiplicar = new JButton("Multiplicar");
+		btnMultiplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double resultante = umObjetoVetor.multiplicar(segundoObjetoVetor);
+				String str = "REsultado da multiplicação:"+resultante;
+				JOptionPane.showMessageDialog(frame, str);
+			}
+		});
+		btnMultiplicar.setBounds(246, 227, 89, 23);
+		frame.getContentPane().add(btnMultiplicar);
 	}
 }
