@@ -25,13 +25,17 @@ public class InteiroPositivo
     }
 
     public long fatorial() {
+    	return this.fatorial(this.getValor());
+    }
+
+    private long fatorial(int numero) {
         long fatorial = 1;
-        for(int i = this.getValor(); i > 1; i--) {
+        for(int i = numero; i > 1; i--) {
             fatorial *= i;
         }
         return fatorial;
     }
-
+    
     public String divisoresInteiros(){
         String str = "Os divisores são "+this.x+", ";
         int qtde = 1;
@@ -59,4 +63,38 @@ public class InteiroPositivo
 
         return vetor;
     }
+    
+    public double valorH(){
+    	double h = 0;
+    	for (int d=1; d<= this.x; d++) {
+    		h = h + 1.0/d;   //double/int -> double
+    	}
+    	return h; 
+    }
+    
+    public double valorI() {
+    	double i = 0;
+    	for (double num=1, den=this.x; num <= this.x; num++, den--) {
+    		i = i + num/den;
+    	}
+    	return i;
+    }
+    
+    public double valorP() {
+    	double p = 0;
+    	double den;
+    	boolean somar = true;
+    	for (int num = 1; num <= this.x; num++) {
+    		den = this.fatorial(num*2);
+    		if (somar) {
+    			p = p + num/den;
+    		}
+    		else {
+    			p = p - num/den;    			
+    		}
+    		somar = !somar;
+    	}
+    	return p;
+    }
+    
 }
