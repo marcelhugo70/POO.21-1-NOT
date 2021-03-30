@@ -20,11 +20,11 @@ public class Contribuinte {
 	}
 
 	public String getCpf() {
-		return this.nome;
+		return this.cpf;
 	}
 
 	public String getUf() {
-		return this.nome;
+		return this.uf;
 	}
 
 	public double getRendaAnual() {
