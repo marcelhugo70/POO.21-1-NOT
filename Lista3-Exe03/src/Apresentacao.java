@@ -23,7 +23,7 @@ import java.awt.event.FocusEvent;
 public class Apresentacao extends javax.swing.JFrame {
 
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-	
+	private Agenda agenda = new Agenda();
 
 	/** Creates new form Apresentacao */
 	public Apresentacao() {
