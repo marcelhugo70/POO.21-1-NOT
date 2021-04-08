@@ -16,6 +16,10 @@ public class Agenda {
 		}
 	}
 	
+	public DataAgenda getData(LocalDate data) {
+		return dias.get(data);
+	}
+	
 	public boolean existeData(LocalDate data) {
 		return dias.containsKey(data);
 	}

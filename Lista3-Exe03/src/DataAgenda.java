@@ -66,6 +66,14 @@ public class DataAgenda {
 		return menor;
 	}
 
+	public String mostrarCompromissos() {
+		String str = "";
+		for (Compromisso c: this.compromissos.values()) {
+			str += "\n"+c.toString();
+		}
+		return str;
+	}
+	
 	public LocalDate getData() {
 		return data;
 	}

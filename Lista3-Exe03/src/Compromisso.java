@@ -53,4 +53,9 @@ public class Compromisso {
 			this.prioridade = prioridade;
 		}
 	}
+	
+	public String toString() {
+		return this.getHora()+" Descrição:"+this.getDesc()
+		+ " Duração:"+this.getTempo()+" Prior:"+this.getPrioridade();
+	}
 }
