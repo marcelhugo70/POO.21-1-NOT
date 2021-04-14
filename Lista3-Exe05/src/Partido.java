@@ -11,6 +11,10 @@ public class Partido {
 			v.setPartido(this);
 		}
 	}
+	
+	public ArrayList<Vereador> getVereadores() {
+		return this.vereadores;
+	}
 
 	public int getTotalProjApresentados() {
 		int qtdProjetosApresentados = 0;
@@ -54,6 +58,16 @@ public class Partido {
 		if (numero >= 10 && numero < 100) {
 			this.numero = numero;
 		}
+	}
+
+	public Vereador getVereadorMaisProjAprovados() {
+		Vereador verMais = null;
+		for (Vereador v: this.vereadores) {
+			if (verMais == null || v.getQtdProjAprov() > verMais.getQtdProjAprov()) {
+				verMais = v;
+			}
+		}
+		return verMais;
 	}
 
 }
