@@ -292,21 +292,32 @@ public class Apresentacao extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		Partido partido = new Partido();
-		partido.setNome(jtfNomePartido.getText());
-		partido.setNumero(Integer.parseInt(jtfNumPartido.getText()));
-		camara.addPartido(partido);
+
+		try {
+			Partido partido = new Partido();
+			partido.setNome(jtfNomePartido.getText());
+			partido.setNumero(Integer.parseInt(jtfNumPartido.getText()));
+			camara.addPartido(partido);
+		} catch (NumberFormatException nfe) {
+			JOptionPane.showMessageDialog(this, "Número do partido está inválido. Redigite");
+		}
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		Vereador vereador = new Vereador();
-		vereador.setNome(jtfNomeVereador.getText());
-		pesquisado.addVereador(vereador);
-		vereador.setQtdProjApres(Integer.parseInt(jtfQtdProjApres.getText()));
-		vereador.setQtdProjAprov(Integer.parseInt(jtfQtdProjAprov.getText()));
-		String msg = "Vereador " + vereador.getNome() + " do partido " + vereador.getPartido().getNome()
-				+ " está com desempenho " + vereador.getDesempenho();
-		JOptionPane.showMessageDialog(this, msg);
+		try {
+			Vereador vereador = new Vereador();
+			vereador.setNome(jtfNomeVereador.getText());
+			vereador.setQtdProjApres(Integer.parseInt(jtfQtdProjApres.getText()));
+			vereador.setQtdProjAprov(Integer.parseInt(jtfQtdProjAprov.getText()));
+			pesquisado.addVereador(vereador);
+			String msg = "Vereador " + vereador.getNome() + " do partido " + vereador.getPartido().getNome()
+					+ " está com desempenho " + vereador.getDesempenho();
+			JOptionPane.showMessageDialog(this, msg);
+		} catch (NumberFormatException nfe) {
+			JOptionPane.showMessageDialog(this, "Formato da quantidade está inválido"+nfe.getMessage()+". Redigite");
+		} catch (IllegalArgumentException iae) {
+			JOptionPane.showMessageDialog(this,iae.getMessage());
+		}
 	}
 
 	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {

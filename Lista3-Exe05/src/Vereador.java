@@ -32,6 +32,9 @@ public class Vereador {
 		if (nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		}
+		else {
+			throw new IllegalArgumentException("Nome do vereador inválido.");
+		}
 	}
 
 	public Partido getPartido() {
@@ -50,6 +53,9 @@ public class Vereador {
 		if (qtdProjApres >= 0) {
 			this.qtdProjApres = qtdProjApres;
 		}
+		else {
+			throw new IllegalArgumentException("Quantidade de projetos apresentados está inválida. Deve ser maior que zero.");
+		}
 	}
 
 	public int getQtdProjAprov() {
@@ -60,6 +66,11 @@ public class Vereador {
 		if (qtdProjAprov >= 0) {
 			this.qtdProjAprov = qtdProjAprov;
 		}
+		else {
+			IllegalArgumentException excecao = new IllegalArgumentException("Quantidade de projetos aprovados está inválida. Deve ser maior que zero.");
+			throw excecao;
+		}
+			
 	}
 
 }
