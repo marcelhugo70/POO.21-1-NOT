@@ -202,10 +202,36 @@ public class Apresentacao extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+		String msg;
+		if (jcbTipoAluno.getSelectedIndex() == 0) {
+			// Aluno Universitário
+			Curso c = cursos.get(jtfSigla.getText());
+			if (c == null) {
+				msg = "Sigla do curso não existe";
+			} else {
+				LocalDate dataNasc = LocalDate.parse(jtfDataNascimento.getText(), formatter);
+				char forma = ((String) jcbIngresso.getSelectedItem()).charAt(0);
+				AlunoUniversitario alunoUni = new AlunoUniversitario(jtfNomeAluno.getText(), dataNasc, forma, c);
+				msg = "Aluno universitário cadastrado";
+				matriculados.add(alunoUni);
+			}
+		} else {
+			// AlunoEnsinoMédio
+			LocalDate dataNasc = LocalDate.parse(jtfDataNascimento.getText(), formatter);
+			int ano = Integer.parseInt((String)jcbAno.getSelectedItem());
+			AlunoEnsinoMedio alunoEM = new AlunoEnsinoMedio(jtfNomeAluno.getText(),
+										dataNasc, ano);
+			msg = "Aluno ensino médio cadastrado";
+			matriculados.add(alunoEM);
+		}
+		JOptionPane.showMessageDialog(this,msg);
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		jTextArea1.setText("Lista de alunos:\n");
+		for (Aluno a:matriculados) {
+			jTextArea1.append("\n"+a.mostra());  //polimorfismo
+		}
 	}
 
 	private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {

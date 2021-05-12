@@ -4,10 +4,18 @@ public class AlunoUniversitario extends Aluno {
 	private char tipoIngresso;
 	private Curso curso;
 
+	// construtor
 	public AlunoUniversitario(String nome, LocalDate dataNascimento, char ingresso, Curso curso) {
 		super(nome, dataNascimento);
 		this.setTipoIngresso(ingresso);
 		this.setCurso(curso);
+	}
+	
+	// destrutor
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("Destrutor de Aluno UNIVERSITÁRIO "+this.getNome());
+		super.finalize();
 	}
 
 	@Override
@@ -15,7 +23,7 @@ public class AlunoUniversitario extends Aluno {
 		// João Carlos é aluno universitário do curso de SIS–Sistemas de Informação,
 		// ingressando por ENEM.
 		return this.getNome() + " é aluno universitário do curso de " + this.curso.getSigla() + "-"
-				+ this.curso.getNome() + ", ingressando por " + this.tipoIngresso;
+				+ this.curso.getNome() + ", ingressando por " + this.getTipoIngressoExtenso();
 	}
 
 	public char getTipoIngresso() {
