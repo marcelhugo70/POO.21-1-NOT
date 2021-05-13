@@ -229,6 +229,7 @@ public class Apresentacao extends javax.swing.JFrame {
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		jTextArea1.setText("Lista de alunos:\n");
+		matriculados.sort(null);
 		for (Aluno a:matriculados) {
 			jTextArea1.append("\n"+a.mostra());  //polimorfismo
 		}
