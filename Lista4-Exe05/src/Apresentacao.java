@@ -28,19 +28,19 @@ public class Apresentacao extends javax.swing.JFrame {
 	private void initComponents() {
 
 		jLabel1 = new javax.swing.JLabel();
-		jTextField1 = new javax.swing.JTextField();
+		jtfTituloEvento = new javax.swing.JTextField();
 		jLabel2 = new javax.swing.JLabel();
-		jTextField2 = new javax.swing.JTextField();
+		jtfValorIngresso = new javax.swing.JTextField();
 		jLabel3 = new javax.swing.JLabel();
-		jTextField3 = new javax.swing.JTextField();
+		jtfDataRealizacao = new javax.swing.JTextField();
 		jLabel4 = new javax.swing.JLabel();
 		jLabel5 = new javax.swing.JLabel();
 		jLabel6 = new javax.swing.JLabel();
-		jTextField4 = new javax.swing.JTextField();
-		jTextField5 = new javax.swing.JTextField();
+		jtfBanda = new javax.swing.JTextField();
+		jtfTipoMusica = new javax.swing.JTextField();
 		jButton1 = new javax.swing.JButton();
 		jSeparator1 = new javax.swing.JSeparator();
-		jComboBox1 = new javax.swing.JComboBox<>();
+		jComboBoxAvaliacaoEvento = new javax.swing.JComboBox<>();
 		jLabel7 = new javax.swing.JLabel();
 		jLabel8 = new javax.swing.JLabel();
 		jLabel9 = new javax.swing.JLabel();
@@ -100,16 +100,16 @@ public class Apresentacao extends javax.swing.JFrame {
 								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addGroup(layout.createSequentialGroup().addComponent(jLabel3)
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 109,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addComponent(jtfDataRealizacao, javax.swing.GroupLayout.PREFERRED_SIZE,
+														109, javax.swing.GroupLayout.PREFERRED_SIZE))
 										.addGroup(layout.createSequentialGroup().addComponent(jLabel2)
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addComponent(jtfValorIngresso, javax.swing.GroupLayout.PREFERRED_SIZE,
+														36, javax.swing.GroupLayout.PREFERRED_SIZE))
 										.addGroup(layout.createSequentialGroup().addComponent(jLabel1)
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199,
-														javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addComponent(jtfTituloEvento, javax.swing.GroupLayout.PREFERRED_SIZE,
+														199, javax.swing.GroupLayout.PREFERRED_SIZE))
 										.addGroup(layout.createSequentialGroup()
 												.addGroup(layout
 														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -119,7 +119,7 @@ public class Apresentacao extends javax.swing.JFrame {
 												.addGroup(layout
 														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
 																false)
-														.addComponent(jTextField5).addComponent(jTextField4,
+														.addComponent(jtfTipoMusica).addComponent(jtfBanda,
 																javax.swing.GroupLayout.DEFAULT_SIZE, 141,
 																Short.MAX_VALUE))
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54,
@@ -141,7 +141,7 @@ public class Apresentacao extends javax.swing.JFrame {
 																javax.swing.GroupLayout.Alignment.LEADING)
 														.addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout
 																.createSequentialGroup().addGap(14, 14, 14)
-																.addComponent(jComboBox1,
+																.addComponent(jComboBoxAvaliacaoEvento,
 																		javax.swing.GroupLayout.PREFERRED_SIZE,
 																		javax.swing.GroupLayout.DEFAULT_SIZE,
 																		javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -152,25 +152,25 @@ public class Apresentacao extends javax.swing.JFrame {
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
 				.createSequentialGroup().addContainerGap()
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel1)
-						.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE,
+						.addComponent(jtfTituloEvento, javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel2)
-						.addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE,
+						.addComponent(jtfValorIngresso, javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel3)
-						.addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE,
+						.addComponent(jtfDataRealizacao, javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jLabel4)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel5)
-						.addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE,
+						.addComponent(jtfBanda, javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel6)
 						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE,
+								.addComponent(jtfTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE,
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 								.addComponent(jButton1)))
 				.addGap(18, 18, 18)
@@ -178,7 +178,7 @@ public class Apresentacao extends javax.swing.JFrame {
 						javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel7)
-						.addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE,
+						.addComponent(jComboBoxAvaliacaoEvento, javax.swing.GroupLayout.PREFERRED_SIZE,
 								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel8)
@@ -199,12 +199,55 @@ public class Apresentacao extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+		try {
+			LocalDate dataRealizacao = LocalDate.parse(jtfDataRealizacao.getText(), formatter);
+			Double valorIngresso = Double.parseDouble(jtfValorIngresso.getText());
+			String msg;
+			Evento e;
+			if (jtfBanda.getText().isEmpty() || jtfTipoMusica.getText().isEmpty()) {
+				e = new Evento(jtfTituloEvento.getText(), valorIngresso, dataRealizacao);
+				msg = "Evento cadastrado";
+			} else {
+				e = new ShowMusical(jtfTituloEvento.getText(), valorIngresso, dataRealizacao, jtfBanda.getText(),
+						jtfTipoMusica.getText());
+				msg = "Show Musical Cadastrado";
 			}
+			jComboBoxAvaliacaoEvento.addItem(e);
+			JOptionPane.showMessageDialog(null, msg);
+		} catch (NumberFormatException nfe) {
+			JOptionPane.showMessageDialog(this, "Valor do ingresso inválido");
+		} catch (DateTimeParseException dtpe) {
+			JOptionPane.showMessageDialog(this, "Data inválida");
+			jtfDataRealizacao.requestFocus();
+		} catch (IllegalArgumentException iae) {
+			JOptionPane.showMessageDialog(this, iae.getMessage());
+		}
+	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+		try {
+		Evento e = (Evento) jComboBoxAvaliacaoEvento.getSelectedItem();
+		if (e == null) {
+			JOptionPane.showMessageDialog(this, "Ainda não há eventos cadastrados.");
+		} else {
+			Avaliacao a = new Avaliacao(Integer.parseInt(jTextField6.getText()),
+										jTextField7.getText());
+			e.setAvaliacao(a);
+		}
+		} catch (NumberFormatException nfe) {
+			JOptionPane.showMessageDialog(this, "Quantidade precisa ser numérica");
+		} catch (IllegalArgumentException iae) {
+			JOptionPane.showMessageDialog(this, iae.getMessage());
+		}
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+		String str = "Lista dos eventos\n";
+		for (int i = 0; i < jComboBoxAvaliacaoEvento.getItemCount(); i++) {
+			Evento e = jComboBoxAvaliacaoEvento.getItemAt(i);
+			str += "\n" + e.exibir(); // polimorfismo
+		}
+		JOptionPane.showMessageDialog(this, str);
 	}
 
 	/**
@@ -222,7 +265,7 @@ public class Apresentacao extends javax.swing.JFrame {
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
-	private javax.swing.JComboBox<Evento> jComboBox1;
+	private javax.swing.JComboBox<Evento> jComboBoxAvaliacaoEvento;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;
@@ -233,11 +276,11 @@ public class Apresentacao extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel8;
 	private javax.swing.JLabel jLabel9;
 	private javax.swing.JSeparator jSeparator1;
-	private javax.swing.JTextField jTextField1;
-	private javax.swing.JTextField jTextField2;
-	private javax.swing.JTextField jTextField3;
-	private javax.swing.JTextField jTextField4;
-	private javax.swing.JTextField jTextField5;
+	private javax.swing.JTextField jtfTituloEvento;
+	private javax.swing.JTextField jtfValorIngresso;
+	private javax.swing.JTextField jtfDataRealizacao;
+	private javax.swing.JTextField jtfBanda;
+	private javax.swing.JTextField jtfTipoMusica;
 	private javax.swing.JTextField jTextField6;
 	private javax.swing.JTextField jTextField7;
 	// End of variables declaration//GEN-END:variables

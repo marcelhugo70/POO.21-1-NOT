@@ -15,7 +15,7 @@ public class Avaliacao {
 
 	public void setQtdPagantes(int qtdPagantes) {
 		if (qtdPagantes < 0) {
-			new IllegalArgumentException("Quantidade de pagantes deve ser maior ou igual a zero");
+			throw new IllegalArgumentException("Quantidade de pagantes deve ser maior ou igual a zero");
 		}
 		this.qtdPagantes = qtdPagantes;
 	}

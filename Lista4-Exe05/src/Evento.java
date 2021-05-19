@@ -83,4 +83,9 @@ public class Evento {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "E:"+this.titulo + " - " + this.data;
+	}
+
 }

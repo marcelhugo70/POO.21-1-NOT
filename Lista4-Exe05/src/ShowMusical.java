@@ -5,7 +5,7 @@ public class ShowMusical extends Evento {
 	private String nomeBanda;
 	private String estiloMusical;
 
-	public ShowMusical(String titulo, float valor, LocalDate data, String nomeBanda, String estiloMusical) {
+	public ShowMusical(String titulo, double valor, LocalDate data, String nomeBanda, String estiloMusical) {
 		super(titulo, valor, data);
 		this.setNomeBanda(nomeBanda);
 		this.setEstiloMusical(estiloMusical);
@@ -41,4 +41,11 @@ public class ShowMusical extends Evento {
 				+ " com ingressos de R$" + this.getValor() + " teve " + this.getAvaliacao().getQtdPagantes() + " pagantes no dia "
 				+ this.getData() + ". Opinião: " + this.getAvaliacao().getOpiniaoGeral();
 	}
+
+	@Override
+	public String toString() {
+		return "SM:"+this.getTitulo() + " - " + this.getData()+" - "+this.nomeBanda;
+	}
+	
+	
 }
