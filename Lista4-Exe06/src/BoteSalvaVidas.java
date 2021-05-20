@@ -4,6 +4,13 @@ public class BoteSalvaVidas extends Embarcacao {
 	private int qtdRemos;
 	private int qtdColetes;
 
+	public BoteSalvaVidas(String registroCapitania, int qtdPessoas, boolean inflavel, int qtdRemos, int qtdColetes) {
+		super(registroCapitania, qtdPessoas);
+		this.setInflavel(inflavel);
+		this.setQtdRemos(qtdRemos);
+		this.setQtdColetes(qtdColetes);
+	}
+
 	public boolean isInflavel() {
 		return inflavel;
 	}
@@ -32,13 +39,6 @@ public class BoteSalvaVidas extends Embarcacao {
 			throw new IllegalArgumentException("Quantidade de coletes deve ser maior que 0");
 		}
 		this.qtdColetes = qtdColetes;
-	}
-
-	public BoteSalvaVidas(String registroCapitania, int qtdPessoas, boolean inflavel, int qtdRemos, int qtdColetes) {
-		super(registroCapitania, qtdPessoas);
-		this.setInflavel(inflavel);
-		this.setQtdRemos(qtdRemos);
-		this.setQtdColetes(qtdColetes);
 	}
 
 	@Override
