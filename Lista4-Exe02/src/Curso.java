@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Curso {
+public class Curso implements Serializable  {
 	private String sigla;
 	private String nome;
 	
